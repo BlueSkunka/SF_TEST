@@ -27,7 +27,7 @@ class PatientController extends AbstractController
         $patient = new Patient();
         $form = $this->createForm(PatientType::class, $patient);
         $form->handleRequest($request);
-        dd($patient);
+        // dd($patient);
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($patient);
